@@ -58,7 +58,7 @@ class HomeActivity : AppCompatActivity() , SearchView.OnQueryTextListener {
                     },
                     onSuccess = { data ->
                         homeBinding.progressBar.visibility = View.GONE
-                        Log.v("RetroFit debug", "j")
+
 //                        data!!.items.let {
 //                            booksAdapter.setBooksItems(it)
 //                        }

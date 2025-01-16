@@ -3,10 +3,14 @@ package com.example.orangeandroidapp.features.home.ui.adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.orangeandroidapp.R
 import com.example.orangeandroidapp.features.data.service.dao.Item
 import com.example.orangeandroidapp.databinding.ItemCardBinding
+import com.example.orangeandroidapp.features.data.service.dao.VolumeInfo
 
 class BooksAdapter() : RecyclerView.Adapter<BooksAdapter.DataViewHolder>() {
 
@@ -22,26 +26,26 @@ class BooksAdapter() : RecyclerView.Adapter<BooksAdapter.DataViewHolder>() {
 
     inner class DataViewHolder(private val binding: ItemCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Item) {
-            try {
-                binding.item = item.volumeInfo
-                binding.executePendingBindings()
-            } catch (e: Exception) {
-                e.stackTrace
-            }
+
+        private val bookTitle: TextView = itemView.findViewById(R.id.book_title)
+        private val bookAuthor: TextView = itemView.findViewById(R.id.book_author)
+        private val bookImage: ImageView = itemView.findViewById(R.id.bookImage)
+
+        fun bind(book: VolumeInfo) {
+            bookTitle.text = book.title
+            bookAuthor.text = book.authors?.get(0)
+
+            Glide.with(itemView.context)
+                .load(book.imageLinks!!.smallThumbnail)
+                .placeholder(R.drawable.ic_launcher_background)
+                .into(bookImage)
         }
     }
 
 
     override fun onBindViewHolder(holder: BooksAdapter.DataViewHolder, position: Int) {
         val model: Item = booksList[position]
-//        holder.bookTitle.text = model.volumeInfo!!.title
-//        holder.bookAuthor.text = model.volumeInfo!!.authors[0]
-
-//        Glide.with(holder.itemView)
-//            .load(model.volumeInfo!!.imageLinks!!.smallThumbnail)
-//            .into(holder.)
-        holder.bind(model)
+        holder.bind(model.volumeInfo!!)
     }
 
     override fun getItemCount(): Int {
