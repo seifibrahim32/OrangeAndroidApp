@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Orange Android App</string>
+    <string name="books">Books</string>
+    <string name="book_title">Book Title</string>
+    <string name="book_description">Book Description</string>
+    <string name="book_author">Book Author</string>
+</resources>
