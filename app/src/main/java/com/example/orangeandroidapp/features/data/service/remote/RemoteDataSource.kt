@@ -6,5 +6,8 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class RemoteDataSource @Inject constructor(private val apiService: BooksService) {
-    suspend fun getBooks(query: String): Response<BookApiResponse> = apiService.getBooks(query)
+    suspend fun getAllBooks(): Response<BookApiResponse>
+            = apiService.getAllBooks()
+    suspend fun getBooksByQuery(query: String): Response<BookApiResponse>
+            = apiService.getBooksByQuery(query)
 }

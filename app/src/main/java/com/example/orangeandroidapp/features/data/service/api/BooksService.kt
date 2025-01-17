@@ -8,5 +8,9 @@ import retrofit2.http.GET
 
 interface BooksService{
     @GET(AppConstants.VOLUMES_ENDPOINT)
-    suspend fun getBooks(@Query("q") q:String) : Response<BookApiResponse>
+    suspend fun getAllBooks(@Query("q") q:String="all",
+                         @Query("key") apiKey: String = AppConstants.API_KEY) : Response<BookApiResponse>
+    @GET(AppConstants.VOLUMES_ENDPOINT)
+    suspend fun getBooksByQuery(@Query("q") q:String,
+                         @Query("key") apiKey: String = AppConstants.API_KEY) : Response<BookApiResponse>
 }

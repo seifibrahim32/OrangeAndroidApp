@@ -12,7 +12,8 @@ import com.example.orangeandroidapp.features.data.service.dao.Item
 import kotlin.reflect.full.memberProperties
 
 class ApiResultHandler<T>(private val context: Context, private val onLoading: () -> Unit,
-                          private val onSuccess: (T?) -> Unit, private val onFailure: (T?) -> Unit) {
+                          private val onSuccess: (T?) -> Unit,
+                          private val onFailure: (T?) -> Unit) {
 
     fun handleApiResult(result: NetWorkResult<T?>) {
         when (result.status) {

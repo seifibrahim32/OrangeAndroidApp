@@ -45,7 +45,7 @@ class HomeActivity : AppCompatActivity() , SearchView.OnQueryTextListener {
     }
 
     private fun getBooks(){
-        homeViewModel.getBooksList()
+        homeViewModel.getAllBooks()
     }
 
     private fun observeBooksData() {
@@ -59,9 +59,11 @@ class HomeActivity : AppCompatActivity() , SearchView.OnQueryTextListener {
                     onSuccess = { data ->
                         homeBinding.progressBar.visibility = View.GONE
 
-//                        data!!.items.let {
-//                            booksAdapter.setBooksItems(it)
-//                        }
+                        data?.items.let {
+                            if (it != null) {
+                                booksAdapter.setBooksItems(it)
+                            }
+                        }
                     },
                     onFailure = {
                         homeBinding.progressBar.visibility = View.VISIBLE

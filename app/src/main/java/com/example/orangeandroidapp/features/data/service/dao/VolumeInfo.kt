@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class VolumeInfo (
     @SerializedName("title") var title: String?= null,
+    @SerializedName("description") var description: String?= null,
     @SerializedName("publishedDate") var publishedDate: String?= null,
     @SerializedName("industryIdentifiers") var industryIdentifiers : ArrayList<IndustryIdentifiers> = arrayListOf(),
     @SerializedName("readingModes") var readingModes: ReadingModes?= ReadingModes(),

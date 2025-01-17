@@ -20,9 +20,17 @@ class HomeActivityViewModel @Inject constructor(private val booksRepository: Boo
     private val _apiResponse: MutableLiveData<NetWorkResult<BookApiResponse>> = MutableLiveData()
     val booksList: MutableLiveData<NetWorkResult<BookApiResponse>> = _apiResponse
 
-    fun getBooksList(): Job {
+    fun getAllBooks(): Job {
         return viewModelScope.launch {
-            booksRepository.getAllBooksByQuery(context, "").collect { values ->
+            booksRepository.getAllBooks(context).collect { values ->
+                _apiResponse.value = values
+            }
+        }
+    }
+
+    fun getBooksByQuery(query: String): Job {
+        return viewModelScope.launch {
+            booksRepository.getAllBooksByQuery(context, query).collect { values ->
                 _apiResponse.value = values
             }
         }

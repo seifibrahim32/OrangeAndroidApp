@@ -24,16 +24,18 @@ class BooksAdapter() : RecyclerView.Adapter<BooksAdapter.DataViewHolder>() {
         return DataViewHolder(binding)
     }
 
-    inner class DataViewHolder(private val binding: ItemCardBinding) :
+    inner class DataViewHolder(binding: ItemCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         private val bookTitle: TextView = itemView.findViewById(R.id.book_title)
         private val bookAuthor: TextView = itemView.findViewById(R.id.book_author)
         private val bookImage: ImageView = itemView.findViewById(R.id.bookImage)
+        private val book_description: TextView = itemView.findViewById(R.id.book_description)
 
         fun bind(book: VolumeInfo) {
             bookTitle.text = book.title
             bookAuthor.text = book.authors?.get(0)
+            book_description.text = book.description
 
             Glide.with(itemView.context)
                 .load(book.imageLinks!!.smallThumbnail)

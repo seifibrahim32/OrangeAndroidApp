@@ -33,8 +33,6 @@ object NetworkModule {
 
         return OkHttpClient
             .Builder()
-            .readTimeout(20, TimeUnit.SECONDS)
-            .connectTimeout(20, TimeUnit.SECONDS)
             .build()
     }
 
