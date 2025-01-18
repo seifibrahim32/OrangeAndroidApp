@@ -8,7 +8,6 @@ import com.example.orangeandroidapp.core.utils.AppConstants.API_INTERNET_MESSAGE
 import com.example.orangeandroidapp.core.utils.AppConstants.API_SOMETHING_WENT_WRONG_MESSAGE
 import com.example.orangeandroidapp.core.utils.NetWorkResult
 import com.example.orangeandroidapp.core.utils.Utils
-import com.example.orangeandroidapp.features.data.service.dao.Item
 import kotlin.reflect.full.memberProperties
 
 class ApiResultHandler<T>(private val context: Context, private val onLoading: () -> Unit,

@@ -46,6 +46,7 @@ kapt {
 }
 
 dependencies {
+    // Lifecycle & UI
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -56,8 +57,13 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
 
+    // Navigation libraries
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
     // DI libraries
     implementation(libs.hilt.android)
+    implementation(libs.androidx.swiperefreshlayout)
     kapt(libs.hilt.compiler)
 
     implementation(libs.androidx.recyclerview)

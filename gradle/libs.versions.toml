@@ -14,9 +14,12 @@ lifecycleViewmodelKtx = "2.8.7"
 material = "1.12.0"
 activity = "1.10.0"
 constraintlayout = "2.2.0"
+navigationUiKtx = "2.8.5"
+navigationFragmentKtx = "2.8.5"
 recyclerview = "1.4.0"
 retrofit = "2.11.0"
 cardview = "1.0.0"
+swiperefreshlayout = "1.1.0"
 
 [libraries]
 android-extensions = { module = "android.arch.lifecycle:extensions", version.ref = "androidExtensions" }
@@ -24,6 +27,8 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 androidx-lifecycle-extensions = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "lifecycleExtensions" }
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleViewmodelKtx" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtx" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
@@ -39,6 +44,7 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
+androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

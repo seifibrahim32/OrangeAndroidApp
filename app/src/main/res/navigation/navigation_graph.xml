@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/books_lists">
+
+    <fragment
+        android:id="@+id/books_lists"
+        android:label="HomeFragment"
+        tools:layout="@layout/home_screen"
+        android:name="com.example.orangeandroidapp.features.home.ui.fragments.BooksListsFragment">
+        <action
+            android:id="@+id/action_homeActivity_to_book_details"
+            app:destination="@id/book_details"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/book_details"
+        android:label="BookDetailsFragment"
+        tools:layout="@layout/book_details"
+        app:action="android.intent.action.VIEW"
+        android:name="com.example.orangeandroidapp.features.book_details.ui.fragments.BookDetailsFragment" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="thumbnail"
+            app:argType="string" />
+        <argument
+            android:name="authors"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_book_details_to_books_lists"
+            app:destination="@id/books_lists" />
+    </fragment>
+</navigation>

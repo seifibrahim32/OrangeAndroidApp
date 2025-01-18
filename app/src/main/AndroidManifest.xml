@@ -11,15 +11,12 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:usesCleartextTraffic="true"
         android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OrangeAndroidApp"
         tools:targetApi="31">
-        <activity
-            android:name=".features.book_details.ui.BookDetailsActivity"
-            android:exported="false" />
         <activity
             android:name=".features.home.ui.HomeActivity"
             android:exported="true">

@@ -1,7 +1,6 @@
 package com.example.orangeandroidapp.features.home.ui.viewmodels
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.orangeandroidapp.core.utils.NetWorkResult
@@ -13,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeActivityViewModel @Inject constructor(private val booksRepository: BooksRepository,
+class BooksListsViewModel @Inject constructor(private val booksRepository: BooksRepository,
                                                 application: Application):
     BaseViewModel(application){
 

@@ -18,12 +18,12 @@ import javax.inject.Inject
 class BooksRepository @Inject constructor(
     private val remoteDataSource: RemoteDataSource
 ){
-
     suspend fun getAllBooks(context: Context): Flow<NetWorkResult<BookApiResponse>> {
         return toResultFlow(context){
             remoteDataSource.getAllBooks()
         }
     }
+
     suspend fun getAllBooksByQuery(context: Context, query: String): Flow<NetWorkResult<BookApiResponse>> {
         return toResultFlow(context){
             remoteDataSource.getBooksByQuery(query)
